@@ -3,6 +3,7 @@ package com.example.today_is_diary.post;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,5 +21,10 @@ public class Post {
     private String content;
 
     @Column(name = "date")
-    private Date date;
+    private LocalDateTime date;
+
+    @PrePersist
+    public void prepersist(){
+        this.date = LocalDateTime.now();
+    }
 }
