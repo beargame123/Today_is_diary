@@ -23,6 +23,11 @@ public class Post {
     @Column(name = "date")
     private LocalDateTime date;
 
+    public Post(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
+
     @PrePersist
     public void prepersist(){
         this.date = LocalDateTime.now();
