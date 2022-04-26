@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 public class PostDto {
+    private Integer id;
 
     private String title;
 
