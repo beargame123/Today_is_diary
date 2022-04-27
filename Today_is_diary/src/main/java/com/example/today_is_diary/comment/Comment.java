@@ -25,7 +25,7 @@ public class Comment {
     private LocalDateTime dateTime;
 
     @ManyToOne
-    @JoinColumn(name = "post_id")
+    @JoinColumn(name = "PostId")
     private Post post;
 
     public Comment(String comment,Post post){
@@ -35,6 +35,11 @@ public class Comment {
 
     @PrePersist
     public void prepersist(){
+        this.dateTime = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate(){
         this.dateTime = LocalDateTime.now();
     }
 }

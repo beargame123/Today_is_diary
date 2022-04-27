@@ -5,11 +5,13 @@ import com.example.today_is_diary.comment.dto.CommentList;
 import com.example.today_is_diary.post.Post;
 import com.example.today_is_diary.post.PostRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 @RequiredArgsConstructor
 public class CommentService {
     private final CommentRepository commentRepository;

@@ -1,11 +1,13 @@
 package com.example.today_is_diary.post;
 
+import com.example.today_is_diary.comment.Comment;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,6 +27,9 @@ public class Post {
 
     @Column(name = "date")
     private LocalDateTime date;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
 
     public Post(String title, String content){
         this.title = title;
