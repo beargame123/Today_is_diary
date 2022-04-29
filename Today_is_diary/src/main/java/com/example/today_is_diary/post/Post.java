@@ -1,6 +1,7 @@
 package com.example.today_is_diary.post;
 
 import com.example.today_is_diary.comment.Comment;
+import com.example.today_is_diary.good.Good;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -30,6 +31,9 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
     private List<Comment> comments;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
+    private List<Good> goods;
 
     public Post(String title, String content){
         this.title = title;
