@@ -1,7 +1,7 @@
-package com.example.today_is_diary.good.post.service;
+package com.example.today_is_diary.good.posts.service;
 
 import com.example.today_is_diary.good.Good;
-import com.example.today_is_diary.good.post.PostGoodRepository;
+import com.example.today_is_diary.good.posts.PostGoodRepository;
 import com.example.today_is_diary.post.Post;
 import com.example.today_is_diary.post.PostRepository;
 import com.example.today_is_diary.user.User;

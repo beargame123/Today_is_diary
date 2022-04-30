@@ -1,4 +1,4 @@
-package com.example.today_is_diary.good.post;
+package com.example.today_is_diary.good.posts;
 
 import com.example.today_is_diary.good.Good;
 import com.example.today_is_diary.good.GoodId;
