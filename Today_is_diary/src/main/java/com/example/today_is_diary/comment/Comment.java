@@ -1,5 +1,6 @@
 package com.example.today_is_diary.comment;
 
+import com.example.today_is_diary.good.Good;
 import com.example.today_is_diary.post.Post;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,6 +29,9 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "PostId")
     private Post post;
+
+    @OneToMany(mappedBy = "comment", cascade = CascadeType.REMOVE)
+    private List<Good> goods;
 
     public Comment(String comment,Post post){
         this.comment = comment;
