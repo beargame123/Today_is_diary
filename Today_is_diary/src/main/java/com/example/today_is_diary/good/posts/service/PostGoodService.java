@@ -1,7 +1,7 @@
 package com.example.today_is_diary.good.posts.service;
 
 import com.example.today_is_diary.good.Good;
-import com.example.today_is_diary.good.posts.PostGoodRepository;
+import com.example.today_is_diary.good.posts.GoodRepository;
 import com.example.today_is_diary.post.Post;
 import com.example.today_is_diary.post.PostRepository;
 import com.example.today_is_diary.user.User;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 @Repository
 public class PostGoodService {
-    private PostGoodRepository postGoodRepository;
-    private PostRepository postRepository;
-    public UserRepository userRepository;
+    private final GoodRepository goodRepository;
+    private final PostRepository postRepository;
+    private final UserRepository userRepository;
 
     private boolean likeOrNot(User user, Post post){
-        return postGoodRepository.findByUserAndPost(user,post).isEmpty();
+        return goodRepository.findByUserAndPost(user,post).isEmpty();
     }
 
     //좋아요 여부
@@ -27,7 +27,7 @@ public class PostGoodService {
         Good good = new Good(post, user);
 
         if(likeOrNot(good.getUser(), post)){
-            postGoodRepository.save(good);
+            goodRepository.save(good);
         }
         else{
             throw new RuntimeException();
