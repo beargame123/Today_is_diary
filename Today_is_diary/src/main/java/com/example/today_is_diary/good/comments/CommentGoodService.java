@@ -4,7 +4,6 @@ import com.example.today_is_diary.comment.Comment;
 import com.example.today_is_diary.comment.CommentRepository;
 import com.example.today_is_diary.good.Good;
 import com.example.today_is_diary.good.posts.GoodRepository;
-import com.example.today_is_diary.post.Post;
 import com.example.today_is_diary.user.User;
 import com.example.today_is_diary.user.UserRepository;
 import lombok.RequiredArgsConstructor;
