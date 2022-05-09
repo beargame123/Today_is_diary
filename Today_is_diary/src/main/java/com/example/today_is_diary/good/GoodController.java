@@ -33,4 +33,6 @@ public class GoodController {
     public void deleteGood(@PathVariable String chatId){
         commentGoodService.deleteGood(chatId);
     } 이것도 마찬가지로 코딩 해야함*/
+
+    //다른것땜에 1주아니면 3일 미룸..
 }
