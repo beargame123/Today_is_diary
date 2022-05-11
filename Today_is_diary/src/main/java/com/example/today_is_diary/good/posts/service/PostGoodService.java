@@ -1,6 +1,7 @@
 package com.example.today_is_diary.good.posts.service;
 
 import com.example.today_is_diary.good.Good;
+import com.example.today_is_diary.good.GoodId;
 import com.example.today_is_diary.good.posts.GoodRepository;
 import com.example.today_is_diary.post.Post;
 import com.example.today_is_diary.post.PostRepository;

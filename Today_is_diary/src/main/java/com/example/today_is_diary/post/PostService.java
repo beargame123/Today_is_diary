@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ public class PostService {
         postRepository.save(post);
     }
 
+    @Transactional
     public List<PostList> postList(){
         Sort sort = Sort.by(Sort.Direction.ASC, "date");
         List<Post> posts =postRepository.findAll(sort);
@@ -41,6 +43,7 @@ public class PostService {
         postRepository.deleteById(id);
     }
 
+    @Transactional
     public void setPost(PostDto postDto, int id){
         Post post = postRepository.getById(id);
         post.setTitle(postDto.getTitle());

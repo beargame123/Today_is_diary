@@ -27,6 +27,7 @@ public class CommentService {
         commentRepository.deleteById(id);
     }
 
+    @Transactional
     public void set(int id, CommentDto dto){
         Comment comment = commentRepository.getById(id);
         comment.setComment(dto.getComment());
